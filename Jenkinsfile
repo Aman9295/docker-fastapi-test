@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/Aman9295/docker-fastapi-test.git'
+                echo 'Code already checked out by Jenkins SCM'
             }
         }
 
