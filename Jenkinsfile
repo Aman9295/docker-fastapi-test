@@ -4,25 +4,25 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/RohitPatil18/docker-fastapi-test.git'
+                git branch: 'main', url: 'https://github.com/Aman9295/docker-fastapi-test.git'
             }
         }
 
         stage('Stop Old Containers') {
             steps {
-                bat 'docker compose down'
+                sh 'docker compose down || true'
             }
         }
 
         stage('Build and Start Containers') {
             steps {
-                bat 'docker compose up -d --build'
+                sh 'docker compose up -d --build'
             }
         }
 
         stage('Check Running Containers') {
             steps {
-                bat 'docker ps'
+                sh 'docker ps'
             }
         }
     }
