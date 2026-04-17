@@ -1,10 +1,15 @@
 pipeline {
     agent any
 
+    options {
+        skipDefaultCheckout(true)
+    }
+
     stages {
         stage('Checkout Code') {
             steps {
-                echo 'Code already checked out by Jenkins SCM'
+                deleteDir()
+                git branch: 'main', url: 'https://github.com/Aman9295/docker-fastapi-test.git'
             }
         }
 
