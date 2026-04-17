@@ -15,6 +15,7 @@ pipeline {
 
         stage('Stop Old Containers') {
             steps {
+                sh 'docker rm -f fastapi_app || true'
                 sh 'docker compose down || true'
             }
         }
