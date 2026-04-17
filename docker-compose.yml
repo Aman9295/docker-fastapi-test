@@ -9,7 +9,7 @@ services:
     restart: unless-stopped
 
   prometheus:
-    build: ./prometheus   # 🔥 change here
+    build: ./prometheus
     container_name: prometheus
     ports:
       - "9090:9090"
